@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting Phones by API</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="font-poppins container mx-auto mt-0  rounded-2xl border-cyan-200 border-y-4">
+    <header class="bg-slate-100 rounded-t-2xl">
+        <div>
+            <div class="navbar">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a class="hover:bg-black hover:text-cyan-400">Home</a></li>
+                            <li>
+                                <a class="hover:bg-black hover:text-cyan-400">More</a>
+                                <ul class="p-2">
+                                    <li><a class="hover:bg-black hover:text-cyan-400">About</a></li>
+                                    <li><a class="hover:bg-black hover:text-cyan-400">Privacy-policy</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="hover:bg-black hover:text-cyan-400">Contacts</a></li>
+                        </ul>
+                    </div>
+                    <a class="lg:text-5xl lg:font-semibold font-semibold text-3xl "><span
+                            class="text-cyan-400">P</span>-<span class="text-cyan-400">S</span>hop</a>
+                </div>
+                <div class="navbar-center hidden lg:flex ">
+                    <ul class="menu menu-horizontal px-1 text-lg">
+                        <li><a class="hover:bg-black hover:text-cyan-400">Home</a></li>
+                        <li>
+                            <details>
+                                <summary class="hover:bg-black hover:text-cyan-400">More</summary>
+                                <ul class="p-2">
+                                    <li><a class="hover:bg-black hover:text-cyan-400">About</a></li>
+                                    <li><a class="hover:bg-black hover:text-cyan-400">Privacy-policy</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li><a class="hover:bg-black hover:text-cyan-400"> Contacts</a></li>
+                        <li><a class="hover:bg-black hover:text-cyan-400">Blogs</a></li>
+                        <li><a class="hover:bg-black hover:text-cyan-400">Collections</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <button
+                        class="btn bg-black text-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black">Sign
+                        Up!</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- main body -->
+
+    <main>
+        <!-- full html section -->
+        <section class="bg-slate-100 rounded-b-2xl">
+            <!--  -->
+
+            <div class="text-center flex flex-col justify-center items-center">
+                <h2 class="lg:text-6xl text-4xl font-bold text-[#100F0F] lg:mt-14 mt-8"><span
+                        class="text-cyan-400">Apple</span> Iphone <span class="text-cyan-400">15</span> Pro Max</h2>
+                <p class="text-[#100F0F] opacity-90 lg:mt-8 mt-5 mb-10 lg:mb-11">There are many variations of passages
+                    of
+                    Lorem Ipsum
+                    available, but the majority have suffered alteration in some form, by injected humou.</p>
+                <button class="btn bg-cyan-400 text-black hover:bg-black hover:text-cyan-400 text-lg btn-accent">Buy
+                    Now</button>
+            </div>
+            <!-- image div -->
+            <section>
+                <div class="flex mt-5 justify-center mx-auto">
+                    <img src="images/5-22.png" alt="">
+
+                </div>
+
+                <!-- collection section -->
+                <div class="text-center flex flex-col justify-center items-center mb-5">
+                    <h2 class="lg:text-4xl text-3xl font-semibold text-[#100F0F] mb-5">Our Collections...</h2>
+                    <div class="flex flex-col grid grid-cols-2 gap-4">
+                        <button
+                            class="btn bg-black text-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black">Iphone</button>
+                        <button
+                            class="btn bg-cyan-400 text-black rounded-2xl hover:bg-black hover:text-cyan-40 btn-accent">Samsung</button>
+                        <button
+                            class="btn bg-cyan-400 text-black rounded-2xl hover:bg-black hover:text-cyan-400 btn-accent">Huawei</button>
+                        <button
+                            class="btn bg-black text-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black">Oppo</button>
+
+                    </div>
+
+                </div>
+                <!-- search section -->
+                <div class="text-center flex flex-col justify-center items-center mt-14">
+
+                    <h2 class="lg:text-3xl text-2xl font-semibold text-[#100F0F] mb-5">Search Your Phone Here!</h2>
+                    <div class="flex text-center items-center justify-center mb-4">
+
+                        <input id="search-field" type="text" placeholder="Search your phone..."
+                            class=" input rounded-l-full border-none  lg:w-[650px] max-w-xs" />
+                        <button onclick="handleSearch()"
+                            class="btn bg-black text-cyan-400 lg:text-lg rounded-r-full hover:bg-cyan-400 hover:text-black">
+                            <img class="lg:h-6 h-5 " src="images/Frame (6).png" alt="">Search</button>
+
+                    </div>
+                </div>
+                <!-- <div class="divider divider-neutral"></div> -->
+
+            </section>
+        </section>
+
+        <!-- card section -->
+
+        <section class="mt-4 mb-5">
+            <div id="phone-container" class="flex flex-col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <!-- <div class="card shadow-xl border-x-2 border-y-2 border-gray-300 hover:bg-slate-200">
+                    <figure class="px-10 pt-10">
+                        <img src="images/Group 48095420.png" alt="Phone" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Iphone 13 Pro Max</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, hic.</p>
+                        <div class="card-actions mt-4 ">
+                            <button class="btn bg-blue-500 hover:bg-red-500  text-base">Show Details</button>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+
+        </section>
+        <section class="flex flex-col text-center justify-center items-center mt-6 mb-5">
+            <button class="btn btn-warning lg:text-lg hover:bg-red-500 hover:text-white hover:z-10">See All</button>
+        </section>
+
+
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
