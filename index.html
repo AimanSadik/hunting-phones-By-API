@@ -63,8 +63,7 @@
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <button
-                        class="btn bg-black text-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black">Sign
+                    <button class="btn bg-black text-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black">Sign
                         Up!</button>
                 </div>
             </div>
@@ -133,7 +132,10 @@
 
         <!-- card section -->
 
-        <section class="mt-4 mb-5">
+        <section class="mt-4 mb-0">
+            <div id="loading-spinner" class="flex flex-col justify-center items-center my-5 hidden">
+                <span class="loading loading-spinner text-info h-20 w-10"></span>
+            </div>
             <div id="phone-container" class="flex flex-col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                 <!-- <div class="card shadow-xl border-x-2 border-y-2 border-gray-300 hover:bg-slate-200">
                     <figure class="px-10 pt-10">
@@ -152,12 +154,46 @@
             </div>
 
         </section>
-        <section class="flex flex-col text-center justify-center items-center mt-6 mb-5">
+        <section id="seeAll-btn" class="flex flex-col text-center justify-center items-center mt-6 mb-6 hidden">
             <button class="btn btn-warning lg:text-lg hover:bg-red-500 hover:text-white hover:z-10">See All</button>
         </section>
 
 
     </main>
+
+    <footer class="container mx-auto rounded-b-2xl  bg-cyan-200 px-4 lg:px-8">
+        <div class="lg:h-[500px] p-5  flex flex-col items-center justify-center text-center w-full">
+            <div class="flex items-center justify-between">
+                <div class="">
+                    <a class="lg:text-5xl lg:font-semibold font-semibold text-4xl "><span
+                            class="text-cyan-600">P</span>-<span class="text-cyan-600">S</span>hop</a>
+                </div>
+                <div class="flex text-center justify-center items-center gap-3">
+                    <!-- <img class="h-6" src="images/Social.png" alt=""> -->
+                    <!-- <button class="btn bg-black text-cyan-400 text-2xl py-2 rounded-2xl hover:bg-cyan-400 hover:text-black">Join Premium</button> -->
+
+                </div>
+            </div>
+            <p class="text-[#131318] opacity-70 text-lg font-medium lg:mt-6 mt-4 lg:mb-8 mb-6">Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Ullam ut fugit tempora explicabo, vel neque. Ullam ut fugit
+                tempora explicabo, vel neque</p>
+
+            <img class="lg:mb-8 mb-6" src="images/Social.png" alt="">
+
+            <div class="divider divider-neutral"></div>
+
+            <hr class="mb-6 text-black lg:mb-8">
+
+
+
+            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+                <p>Copyright © 2024 - All right reserved by P-Shop Industries Ltd</p>
+            </footer>
+
+        </div>
+
+    </footer>
+
     <script src="main.js"></script>
 </body>
 
