@@ -2,18 +2,17 @@
 
 // search functionssssssssss
 
-const loadedData = async (search, isShowAll) => {
+const loadedData2 = async (search, isShowAll) => {
 
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${search}`);
     const data = await res.json();
     const phones = data.data;
-    // console.log(phones);
-    displayPhones(phones, isShowAll);
+    displayPhones2(phones, isShowAll);
 }
 
-const displayPhones = (phones, isShowAll) => {
-    const phoneContainer = document.getElementById("phone-container");
-    const seeAllBtn = document.getElementById("seeAll-btn")
+const displayPhones2 = (phones, isShowAll) => {
+    const phoneContainer = document.getElementById("phone-container2");
+    const seeAllBtn = document.getElementById("seeAll-btn2")
     phoneContainer.innerHTML = '';
 
     if (phones.length >= 9 && !isShowAll) {
@@ -47,12 +46,12 @@ const displayPhones = (phones, isShowAll) => {
         `;
         phoneContainer.appendChild(phoneCard);
     });
-    toggleSpinnerLoading(false);
+    toggleSpinnerLoading2(false);
 }
 
 // showing phone details//
 
-const handleShowDetails = async (id) => {
+const handleShowDetails2 = async (id) => {
 
     const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
     const data = await res.json();
@@ -60,17 +59,17 @@ const handleShowDetails = async (id) => {
 
     console.log(phone);
 
-    displayModalDetails(phone);
+    displayModalpurchase(phone);
 
 }
 
 //showing modal section
 
-const displayModalDetails = (phone) => {
-    const phoneName = document.getElementById("phone-inner-details");
+const displayModalpurchase = (phone) => {
+    const phoneName = document.getElementById("phone-inner-price");
     phoneName.innerText = phone.name;
 
-    const phoneContainer = document.getElementById("phone-display-container");
+    const phoneContainer = document.getElementById("phone-container");
 
     phoneContainer.className = `font-normal text-sm mt-4 mb-4`;
 
@@ -87,26 +86,27 @@ const displayModalDetails = (phone) => {
 
     `;
 
-    display_modal.showModal();
+    // display_modal2.showModal();
+    my_modal_5.showModal()
 
 }
 
 //search button
-const handleSearch = (isShowAll) => {
+const handleSearch2 = (isShowAll) => {
 
-    const searchField = document.getElementById("search-field");
+    const searchField = document.getElementById("search-field2");
     const searchText = searchField.value;
     console.log(searchText);
     // searchField.value = '';
-    toggleSpinnerLoading(true);
+    toggleSpinnerLoading2(true);
 
-    loadedData(searchText, isShowAll);
+    loadedData2(searchText, isShowAll);
 
 }
 // loadedData()
 
-const toggleSpinnerLoading = (isLoading) => {
-    const spinnerLoading = document.getElementById("loading-spinner");
+const toggleSpinnerLoading2 = (isLoading) => {
+    const spinnerLoading = document.getElementById("loading-spinner2");
     if (isLoading) {
         spinnerLoading.classList.remove('hidden');
     }
@@ -117,33 +117,33 @@ const toggleSpinnerLoading = (isLoading) => {
 
 // show all button
 
-const handleShowAll = () => {
-    handleSearch(true);
+const handleShowAll2 = () => {
+    handleSearch2(true);
 }
 
 
 // purchase section
 
-const purchasePhone = () => {
+// const purchasePhone = () => {
 
-    const hideMainScreen = document.getElementById("main-section");
-    hideMainScreen.classList.add('hidden');
-    const hideFooterScreen = document.getElementById("footer-section");
-    hideFooterScreen.classList.add('hidden');
+//     const hideMainScreen = document.getElementById("main-section");
+//     hideMainScreen.classList.add('hidden');
+//     const hideFooterScreen = document.getElementById("footer-section");
+//     hideFooterScreen.classList.add('hidden');
 
-    const showPurchaseScreen = document.getElementById("purchase-main-section");
-    showPurchaseScreen.classList.remove('hidden');
+//     const showPurchaseScreen = document.getElementById("purchase-main-section");
+//     showPurchaseScreen.classList.remove('hidden');
 
-}
+// }
 
-const goBackToHome = () => {
+// const goBackToHome = () => {
 
-    const hideMainScreen = document.getElementById("main-section");
-    hideMainScreen.classList.remove('hidden');
-    const hideFooterScreen = document.getElementById("footer-section");
-    hideFooterScreen.classList.remove('hidden');
+//     const hideMainScreen = document.getElementById("main-section");
+//     hideMainScreen.classList.remove('hidden');
+//     const hideFooterScreen = document.getElementById("footer-section");
+//     hideFooterScreen.classList.remove('hidden');
 
-    const showPurchaseScreen = document.getElementById("purchase-main-section");
-    showPurchaseScreen.classList.add('hidden');
+//     const showPurchaseScreen = document.getElementById("purchase-main-section");
+//     showPurchaseScreen.classList.add('hidden');
 
-}
+// }

@@ -32,7 +32,7 @@
                         </div>
                         <ul tabindex="0"
                             class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a onclick="goBackToHome()"  class="hover:bg-black hover:text-cyan-400">Home</a></li>
+                            <li><a onclick="goBackToHome()" class="hover:bg-black hover:text-cyan-400">Home</a></li>
                             <li>
                                 <a class="hover:bg-black hover:text-cyan-400">More</a>
                                 <ul class="p-2">
@@ -60,7 +60,17 @@
                         </li>
                         <li><a class="hover:bg-black hover:text-cyan-400"> Contacts</a></li>
                         <li><a class="hover:bg-black hover:text-cyan-400">Blogs</a></li>
-                        <li><a class="hover:bg-black hover:text-cyan-400">Collections</a></li>
+                        <li class="">
+                            <details>
+                                <summary class="hover:bg-black hover:text-cyan-400">Collections</summary>
+                                <ul class="p-2">
+                                    <li><a class="hover:bg-black hover:text-cyan-400">Iphone</a></li>
+                                    <li><a class="hover:bg-black hover:text-cyan-400">Samsung</a></li>
+                                    <li><a class="hover:bg-black hover:text-cyan-400">Huawei</a></li>
+                                    <li><a class="hover:bg-black hover:text-cyan-400">OppO</a></li>
+                                </ul>
+                            </details>
+                        </li>
                     </ul>
                 </div>
                 <div class="navbar-end">
@@ -101,13 +111,13 @@
                 <div class="text-center flex flex-col justify-center items-center mb-5">
                     <h2 class="lg:text-4xl text-3xl font-semibold text-[#100F0F] mb-5">Our Collections...</h2>
                     <div class="flex flex-col grid grid-cols-2 gap-4">
-                        <button
+                        <button onclick="loadedData('iPhone 13 Pro Max')"
                             class="btn bg-black text-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black">Iphone</button>
-                        <button
+                        <button onclick="loadedData('Galaxy S22 5G')"
                             class="btn bg-cyan-400 text-black rounded-2xl hover:bg-black hover:text-cyan-400 btn-accent">Samsung</button>
-                        <button
+                        <button onclick="loadedData('P50 Pro')"
                             class="btn bg-cyan-400 text-black rounded-2xl hover:bg-black hover:text-cyan-400 btn-accent">Huawei</button>
-                        <button
+                        <button onclick="loadedData('Reno6 Pro 5G (Snapdragon)')"
                             class="btn bg-black text-cyan-400 rounded-2xl hover:bg-cyan-400 hover:text-black">Oppo</button>
 
                     </div>
@@ -189,15 +199,120 @@
     <!-- purchase section -->
 
     <main id="purchase-main-section" class="hidden">
-        <section class="bg-slate-100 rounded-b-2xl">
+        <section class="bg-slate-100 rounded-b-2xl pt-6">
+
+            <div class="flex justify-between items-center p-4">
+                <div>
+                    <h1 class="lg:text-4xl text-xl font-semibold text-[#100F0F]">Purchase Your Gadget..</h1>
+                </div>
+                <div>
+                    <div class="">
+                        <button class="btn  lg:w-[100px] w-[80px]"><img class="lg:h-6 h-4" src="images/cart.svg"
+                                alt=""><span class="lg:text-lg text-base">0</span></button>
+
+                    </div>
+                </div>
+            </div>
 
             <div>
-                <div>
-                    <h1 class="lg:text-4xl text-3xl font-semibold text-[#100F0F] p-10 pt-10">Purchase Your Gadget..</h1>
+                <!-- search section -->
+                <div class="text-center flex flex-col justify-center items-center">
+
+                    <h2 class="lg:text-3xl text-bash font-semibold text-[#100F0F] mt-4 mb-2">Search Your Phone Here!
+                    </h2>
+                    <div class="flex text-center items-center justify-center mb-4">
+
+                        <input id="search-field2" type="text" placeholder="Search your phone..."
+                            class=" input rounded-l-full border-none w-[198px] lg:w-[650px]" />
+                        <button onclick="handleSearch2()"
+                            class="btn bg-black text-cyan-400 lg:text-lg rounded-r-full hover:bg-cyan-400 hover:text-black">
+                            <img class="lg:h-6" src="images/Frame (6).png" alt="">Search</button>
+
+                    </div>
                 </div>
+
+
+                <!-- modal -->
+
                 <div>
+                    <!-- Open the modal using ID.showModal() method -->
+
+                    <!-- <dialog id="display_modal2" class="modal modal-middle">
+                        <div class="modal-box">
+
+                            <h3 id="phone-inner-details2" class="font-bold text-3xl"></h3>
+
+                            <div id="phone-display-container2" class=" p-2 ">
+
+                            </div>
+
+                            <div class="modal-action">
+                                <form method="dialog">
+                                 if there is a button in form, it will close the modal -->
+                    <!-- <button
+                                        class="btn bg-red-600 text-white hover:text-black hover:bg-red-600">Close</button>
+                                </form>
+                            </div>
+                        </div> -->
+                    <!-- </dialog> -->
+
+
+                    
+
+                    <dialog id="my_modal_5" class="modal modal-middle">
+                        <div class="modal-box">
+
+                            <h3 id="phone-inner-price" class="font-bold text-3xl"></h3>
+
+                            <div id="phone-container" class=" p-2 ">
+
+                            </div>
+
+
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button
+                                        class="btn bg-red-600 text-white hover:text-black hover:bg-red-600">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+
 
                 </div>
+
+
+
+
+                <!-- card section -->
+
+                <section class="mt-4 mb-0">
+                    <div id="loading-spinner2" class="flex flex-col justify-center items-center my-5 hidden">
+                        <span class="loading loading-spinner text-info h-20 w-10"></span>
+                    </div>
+                    <div id="phone-container2"
+                        class="flex flex-col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <!-- <div class="card shadow-xl border-x-2 border-y-2 border-gray-300 hover:bg-slate-200">
+                    <figure class="px-10 pt-10">
+                        <img src="images/Group 48095420.png" alt="Phone" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Iphone 13 Pro Max</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, hic.</p>
+                        <div class="card-actions mt-4 ">
+                            <button class="btn bg-blue-500 hover:bg-red-500  text-base">Show Details</button>
+                        </div>
+                    </div>
+                </div> -->
+                    </div>
+
+                </section>
+                <section id="seeAll-btn2"
+                    class="flex flex-col text-center justify-center items-center mt-6 mb-6 hidden">
+                    <button onclick="handleShowAll2()"
+                        class="btn btn-warning lg:text-lg hover:bg-red-500 hover:text-white hover:z-10">See All</button>
+                </section>
             </div>
 
         </section>
@@ -238,6 +353,7 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="main-2.js"></script>
 </body>
 
 </html>
